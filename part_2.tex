@@ -5,16 +5,23 @@
 \textbf{Task:} Describe the data. What has been measured, in what units, at which locations, with which instruments and with what temporal resolution?
 
 The dataset consists of eight years of wind observations from 2018 to 2024, provided as 10-minute mean values. 
-The data in the file \texttt{tenMinutesData\_2018\_2024.csv} originates from the meteorological mast at the DTU Risø Campus
+The data in the file \texttt{tenMinutesData\_2018\_2024.csv} originates from the meteorological mast at the DTU Risø Campus.
 
-It includes:
-\begin{itemize}
-    \item \textbf{Measurements and Units:} The primary variables measured are the horizontal wind speed (sp) in meters per second [m/s] and the wind direction (dir) in degrees [$^\circ$].
-    \item \textbf{Instruments:} Wind speeds were recorded using cup anemometers (indicated by 'W'), while wind directions were captured by wind vanes (also 'W'). Additional high-frequency measurements (though averaged for this dataset) are available from 3D-Sonic anemometers (indicated by 'SW').
-    \item \textbf{Locations and Heights:} The data was collected at the Risø met mast, with specific focus on the 70 m height for the long-term comparison. 
-    \item \textbf{Temporal Resolution:} The data consists of 10-minute mean values (filters out short-term turbulence while capturing significant weather-induced variations)
-\end{itemize}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{llll}
+        \toprule
+        \textbf{Parameter} & \textbf{Symbol} & \textbf{Unit} & \textbf{Instruments / Label} \\
+        \midrule
+        Wind speed & sp & [m/s] & Cup (W) and Sonic (SW) anemometers \\
+        Wind direction & dir & [$^\circ$] & Wind vanes (W) and Sonic (SW) sensors \\
+        Precipitation & Rain & [mm] & Tipping bucket rain gauge \\
+        \bottomrule
+    \end{tabular}
+    \caption{Summary of measured parameters and sensor types.}
+\end{table}
 
+The measurements are available at specific heights, including 57 m and 70 m for wind speed, and 41 m for wind direction. For the long-term climate analysis and the Annual Energy Production (AEP) calculation of the V52 turbine, the data collected at the 70 m height is of primary interest.
 
 \subsection{Raw Data and Gaps}
 \textbf{Task:} Plot the raw data as function of time. Identify any data gaps and discuss possible reasons for these gaps.
