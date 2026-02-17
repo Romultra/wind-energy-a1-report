@@ -1,0 +1,42 @@
+\section{Part 2: Statistical analysis of multi-year wind climate}
+\label{sec:part2}
+
+\subsection{Data Description}
+\textbf{Task:} Describe the data. What has been measured, in what units, at which locations, with which instruments and with what temporal resolution?
+
+\subsection{Raw Data and Gaps}
+\textbf{Task:} Plot the raw data as function of time. Identify any data gaps and discuss possible reasons for these gaps.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=1\textwidth]{figures/Q10_gaps.png}
+    \caption{Long-term wind speed time series (2018-2024) highlighting data gaps.}
+\end{figure}
+
+\subsection{Seasonal Wind Roses}
+\textbf{Task:} Using the whole time series, plot a wind rose for the winter months (Dec-Feb) and one for the summer months (Jun-Aug) discuss the directional distribution of the wind. Does it match what you would expect for Denmark?
+
+
+
+\subsection{Histogram and Weibull Fit}
+\textbf{Task:} Define wind bins with a spacing of 1m/s and plot a histogram of the wind speed variation based on the data from 70m height for two different years, 2018 and 2024. Fit a Weibull distribution to the observed wind speed.
+
+\begin{equation}
+    f(u) = \frac{k}{A} \left( \frac{u}{A} \right)^{k-1} \exp\left[ -\left( \frac{u}{A} \right)^k \right]
+\end{equation}
+
+\subsection{AEP for V52 Turbine}
+\textbf{Task:} Calculate the AEP for the V52 turbine located at the met mast site, based on the 2018 and 2024 wind measured data. Discuss implications on the yearly variability.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lrr}
+        \toprule
+        Year & AEP [MWh] & Capacity Factor [\%] \\
+        \midrule
+        2018 & ... & ... \\
+        2024 & ... & ... \\
+        \bottomrule
+    \end{tabular}
+    \caption{Annual Energy Production (AEP) and Capacity Factor for the V52 turbine.}
+\end{table}
