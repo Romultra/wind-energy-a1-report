@@ -5,12 +5,19 @@
 \textbf{Task:} Describe the met mast and its location. How do the surroundings of the mast look in terms of terrain roughness? How far is the mast from the turbine and in which direction? Why?
 
 The measurements are from DTU Risø Campus using a met mast with a total height of 70 m. The mast is around 120 m, away from the Vestas V52 wind turbine.
-The surrounding terrain has a low roughness to the west  (due to water from the Roskilde Fjord) and a higher roughness in the other directions since it consists of open fields and the campus buildings.
-To assure the free flow, the mast is posi
+Regarding the terrain, the location is characterized by varying roughness lengths. To the west, it's dominated by the Roskilde Fjord, which leads to very low terrain roughness. In the other directions, the roughness is higher due to a mix of open fields with light vegetation and the campus buildings.
+The mast is positioned at this distance and orientation because the prevailing winds in the area come from the west, over the fjord. This setup allows for the measurement of undisturbed wind conditions, as the mast is located upwind of the turbine, ensuring that the data collected is not influenced by the wake effects of the turbine.
+Therefore free flow measurements can be obtained.
 % Hier Text einfügen
 
 \subsection{Data Collection}
 \textbf{Task:} Describe the data collected. What has been measured, what units, what sample rate, where at the mast and with what instruments?
+
+The data collected on February 10th, 2026, corresponds to three categories: \textbf{Wsp, AirAbs, Sdir}. They correspond to horizontal wind speeds measured with cup anemometers and wind vanes in $m/s^2$, \textcolor{red}{wtf is AirAbs and what is its unit?}, and southern wind direction in $\º$. 
+
+Since the wind is a dynamic fluid, each category varies according to height prompting them to be measured at different rungs of the mast. Wsp is measured at 70 m (i.e. the uppermost level of the mast), 57 m, 44 m, 31 m, and 18 m; then, AirAbs is measured at 70 m and 18 m; and lastly, Sdir is measured at 70 m, 44 m, and 18 m.
+
+All measurements, i.e. the three categories at their respective mast heights, are simultaneously recorded with 10-minutes resolution. 
 
 \subsection{Raw Time Series Plot}
 \textbf{Task:} Plot the raw time series of the wind speed at the different heights. What time scales do you see? Do they differ for the different heights?
