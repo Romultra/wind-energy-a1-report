@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.2.7)  17 FEB 2026 23:28
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.2.7)  21 FEB 2026 19:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1247,18 +1247,69 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 33.
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 29.
 
 File: root/logo.pdf Graphic file (type pdf)
 <use root/logo.pdf>
-[2])
+[2]
+File: figures/Q10_Wsp_70m.png Graphic file (type bmp)
+<figures/Q10_Wsp_70m.png>
+File: figures/Q10_Wsp_57m.png Graphic file (type bmp)
+<figures/Q10_Wsp_57m.png>
+File: figures/Q10_Dir_70m.png Graphic file (type bmp)
+<figures/Q10_Dir_70m.png>
 
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 129.
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 48.
 
 File: root/logo.pdf Graphic file (type pdf)
 <use root/logo.pdf>
 [3]
-No file main.bbl.
+File: figures/Q10_Dir_57m.png Graphic file (type bmp)
+<figures/Q10_Dir_57m.png>
+File: figures/Q10_Dir_41m.png Graphic file (type bmp)
+<figures/Q10_Dir_41m.png>
+
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 60.
+
+File: root/logo.pdf Graphic file (type pdf)
+<use root/logo.pdf>
+[4]
+File: figures/Q10_Rain.png Graphic file (type bmp)
+<figures/Q10_Rain.png>
+File: figures/Q10_Global_Gaps.png Graphic file (type bmp)
+<figures/Q10_Global_Gaps.png>
+
+
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 75.
+
+File: root/logo.pdf Graphic file (type pdf)
+<use root/logo.pdf>
+[5]
+File: figures/Q10_Gap_Histogram.png Graphic file (type bmp)
+<figures/Q10_Gap_Histogram.png>
+File: figures/Q10_Long_Gap_Seasonality.png Graphic file (type bmp)
+<figures/Q10_Long_Gap_Seasonality.png>
+
+
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 87.
+
+File: root/logo.pdf Graphic file (type pdf)
+<use root/logo.pdf>
+[6]
+
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 102.
+
+File: root/logo.pdf Graphic file (type pdf)
+<use root/logo.pdf>
+[7])
+
+LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 129.
+
+File: root/logo.pdf Graphic file (type pdf)
+<use root/logo.pdf>
+[8] (main.bbl)
 
 ! LaTeX Error: File `appendix.tex' not found.
 
@@ -1275,11 +1326,11 @@ l.137 \input{appendix}
 
  
 Here is how much of TeX's memory you used:
- 33256 strings out of 402987
- 658072 string characters out of 5452872
+ 33351 strings out of 402987
+ 660703 string characters out of 5452872
  1368901 words of memory out of 5000000
- 61464 multiletter control sequences out of 15000+600000
- 659867 words of font info for 70 fonts, out of 8000000 for 9000
+ 61545 multiletter control sequences out of 15000+600000
+ 660242 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 110i,14n,118p,510b,967s stack positions out of 10000i,1000n,20000p,200000b,200000s
-Output written on main.pdf (5 pages).
+ 110i,14n,118p,510b,959s stack positions out of 10000i,1000n,20000p,200000b,200000s
+Output written on main.pdf (10 pages).
