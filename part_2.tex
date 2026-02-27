@@ -4,7 +4,7 @@
 \subsection{Data Description}
 \textbf{Task:} Describe the data. What has been measured, in what units, at which locations, with which instruments and with what temporal resolution?
 
-The dataset consists of eight years of wind observations from 2018 to 2026, provided as 10-minute mean values. 
+The dataset consists of seven years of wind observations from 2018 to the end of 2025, provided as 10-minute mean values. 
 The data in the file \texttt{tenMinutesData\_2018\_2024.csv} originates from the meteorological mast at the DTU Risø Campus.
 
 \begin{table}[H]
@@ -21,24 +21,24 @@ The data in the file \texttt{tenMinutesData\_2018\_2024.csv} originates from the
     \caption{Summary of measured parameters and sensor types.}
 \end{table}
 
-The measurements are available at specific heights, including 57 m and 70 m for wind speed, and 41 m for wind direction. For the long-term climate analysis and the Annual Energy Production (AEP) calculation of the V52 turbine, the data collected at the 70 m height is of primary interest.
+Measurements are available from different heights. From the 57m and 70m hight, SWsp, Wsp and Sdir are available. In addition to that the wind direction for 41m (Wdir) and data for the Rain are in the included in the data file.
 
 \subsection{Raw Data and Gaps}
 \textbf{Task:} Plot the raw data as function of time. Identify any data gaps and discuss possible reasons for these gaps.
 
 \subsubsection{Time Series Visualization}
-The raw 10-minute average data for wind speed, direction, and precipitation is plotted for the period between 2018 and 2026. This includes measurements from cup anemometers, sonic anemometers, and wind vanes at various heights.
+The raw 10-minute average data for wind speed, direction, and precipitation is plotted for the period from 2018 to the end of 2025. This includes measurements from cup anemometers, sonic anemometers, and wind vanes at various heights.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/Q10_Wsp_70m.png}
-    \caption{Raw 10-minute wind speed at 70m comparing Cup and Sonic anemometers.}
+    \caption{Raw 10-minute wind speed at 70m from the Cup and Sonic anemometers.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/Q10_Wsp_57m.png}
-    \caption{Raw 10-minute wind speed at 57m comparing Cup and Sonic anemometers.}
+    \caption{Raw 10-minute wind speed at 57m from the Cup and Sonic anemometers.}
 \end{figure}
 \begin{figure}[H]
     \centering
@@ -72,13 +72,15 @@ To further investigate and assess the data quality, time intervals over the expe
     \includegraphics[width=1\textwidth]{figures/Q10_Global_Gaps.png}
     \caption{Global data availability from 2018 to 2026. Red segments identify total system outages where no timestamps were recorded.}
 \end{figure}
-
+The data gaps are predominantly in the years between 2018 and 2020. 
+From earlier plots one can see that there is missing data of the wind speed at 70m hight in the first half of 2025 from the cup sensor.
+In addition to that, the cup snesor at 57 m also has a data gap between 2019 and 2020.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/Q10_Gap_Histogram.png}
     \caption{Distribution of gap durations on a logarithmic scale, showing the frequency of short versus long-term outages.}
 \end{figure}
-
+The short outtakes are dominating while longer outtages occur a lot less frequent. The longest outtage was around 45 hours.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/Q10_Long_Gap_Seasonality.png}

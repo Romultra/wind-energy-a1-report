@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.2.7)  21 FEB 2026 19:07
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.2.7)  27 FEB 2026 12:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1107,8 +1107,7 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 \c@stepsi=\count391
 \enitdp@steps=\count392
-
-No file main.aux.
+ (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
@@ -1131,6 +1130,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
 LaTeX Font Info:    ... okay on input line 101.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 101.
 LaTeX Font Info:    ... okay on input line 101.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1168,11 +1168,9 @@ LaTeX Font Info:    ... okay on input line 101.
 \c@lstlisting=\count393
 Package tocbasic Info: setting babel extension for `lol' on input line 101.
 Package hyperref Info: Link coloring OFF on input line 101.
+(main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -1205,17 +1203,17 @@ LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
 
 [1
 
-])
-No file main.toc.
+]) (main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
 File: root/logo.pdf Graphic file (type pdf)
 <use root/logo.pdf>
-[1] (part_1.tex
+ [1] (part_1.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
 
- (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
@@ -1227,7 +1225,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 part_1.tex:16: Undefined control sequence.
 <recently read> \º 
                    
-l.16 ...unit?}, and southern wind direction in $\º
+l.16 ...textcolor{red}{how is it measured?} in $\º
+                                                  $C, and southern wind dire...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+part_1.tex:16: Undefined control sequence.
+<recently read> \º 
+                   
+l.16 ... $\º$C, and southern wind direction in $\º
                                                   $.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1247,7 +1256,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 29.
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 31.
 
 File: root/logo.pdf Graphic file (type pdf)
 <use root/logo.pdf>
@@ -1293,13 +1302,13 @@ File: figures/Q10_Long_Gap_Seasonality.png Graphic file (type bmp)
 <figures/Q10_Long_Gap_Seasonality.png>
 
 
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 87.
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 89.
 
 File: root/logo.pdf Graphic file (type pdf)
 <use root/logo.pdf>
 [6]
 
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 102.
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 104.
 
 File: root/logo.pdf Graphic file (type pdf)
 <use root/logo.pdf>
@@ -1326,11 +1335,11 @@ l.137 \input{appendix}
 
  
 Here is how much of TeX's memory you used:
- 33351 strings out of 402987
- 660703 string characters out of 5452872
+ 33368 strings out of 402987
+ 660892 string characters out of 5452872
  1368901 words of memory out of 5000000
- 61545 multiletter control sequences out of 15000+600000
+ 61554 multiletter control sequences out of 15000+600000
  660242 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 110i,14n,118p,510b,959s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,15n,118p,510b,959s stack positions out of 10000i,1000n,20000p,200000b,200000s
 Output written on main.pdf (10 pages).
