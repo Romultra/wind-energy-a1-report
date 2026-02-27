@@ -38,6 +38,32 @@ All measurements, i.e. the three categories at their respective mast heights, ar
 \textbf{Task:} Estimate the lapse rate by using the data from the two temperature sensors at 18m and 70m.
 Compare its value with the dry adiabatic lapse rate and give a comment. Discuss the validity of the logarithmic profile under the observed stability conditions. 
 
+
+To estimate the atmospheric lapse rate during the measurement period, we use the
+two temperature sensors mounted on the mast at heights of 18\,m and 70\,m. First the mean temperatures at both hights are computed. The resulting
+values are
+\[
+T_{18} = -0.24 \,^\circ\mathrm{C}, \qquad
+T_{70} = -0.61 \,^\circ\mathrm{C}.
+\]
+The lapse rate (vertical temperature gradient) is then obtained from
+\[
+\Gamma_{\text{measured}} = \frac{\Delta T}{\Delta z}
+= \frac{T_{70} - T_{18}}{70\,\mathrm{m} - 18\,\mathrm{m}}
+= \frac{-0.61 - (-0.24)}{52\,\mathrm{m}}
+= -0.00722 \,\mathrm{K/m},
+\]
+which corresponds to
+\[
+\Gamma_{\text{measured}} = -7.22 \,\mathrm{K/km}.
+\]
+
+For comparison, the dry adiabatic lapse rate is
+\[
+\Gamma_{\text{dry}} = -9.8 \,\mathrm{K/km}.
+\]
+Our measured lapse rate is less negative (the temperature decreases more slowly with height) than the dry adiabatic value. This indicates a weakly stable stratification. Vertical motions are somewhat suppressed compared to a dry adiabatic, neutrally stratified atmosphere. Therefore, the temperature profile suggests slightly stable atmospheric conditions during the measurement period.
+
 \subsection{Heat Flux and Stability}
 \textbf{Task:} Estimate the friction velocity and the heat flux from the sonic anemometer data.
 
