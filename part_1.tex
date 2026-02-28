@@ -2,7 +2,7 @@
 \label{sec:part1}
 
 \subsection{Met Mast and Location}
-\textbf{Task:} Describe the met mast and its location. How do the surroundings of the mast look in terms of terrain roughness? How far is the mast from the turbine and in which direction? Why?
+\textbf{Task 1:} Describe the met mast and its location. How do the surroundings of the mast look in terms of terrain roughness? How far is the mast from the turbine and in which direction? Why?
 
 The measurements are from DTU Risø Campus using a met mast with a total height of 70 m. The mast is around 120 m, away from the Vestas V52 wind turbine.
 Regarding the terrain, the location is characterized by varying roughness lengths. To the west, it's dominated by the Roskilde Fjord, which leads to very low terrain roughness. In the other directions, the roughness is higher due to a mix of open fields with light vegetation and the campus buildings.
@@ -11,31 +11,67 @@ Therefore free flow measurements can be obtained.
 % Hier Text einfügen
 
 \subsection{Data Collection}
-\textbf{Task:} Describe the data collected. What has been measured, what units, what sample rate, where at the mast and with what instruments?
+\textbf{Task 2:} Describe the data collected. What has been measured, what units, what sample rate, where at the mast and with what instruments?
 
-The data collected on February 10th, 2026, corresponds to three categories: \textbf{Wsp, AirAbs, Sdir}. They correspond to horizontal wind speeds measured with cup anemometers and wind vanes in $m/s^2$, to temperature measured with \textcolor{red}{how is it measured?} in $\º$C, and southern wind direction in $\º$. 
+The data collected on February 10th, 2026 between 10.00 and 11.00, corresponds to three categories: \textbf{Wsp, AirAbs, and Sdir}. They respectively describe horizontal wind speeds measured in $m/s^2$, temperature measured in $º$ C, and southern wind direction measured in $º$. 
 
-Since the wind is a dynamic fluid, each category varies according to height prompting them to be measured at different rungs of the mast. Wsp is measured at 70 m (i.e. the uppermost level of the mast), 57 m, 44 m, 31 m, and 18 m; then, AirAbs is measured at 70 m and 18 m; and lastly, Sdir is measured at 70 m, 44 m, and 18 m.
+Since wind is a dynamic fluid, and it varies according to its distance from the ground and its temperature, each category varies with height. This encourages recordings for each category to happen simultaneously at different rungs of the mast. Wsp is measured at 70 m (i.e. the uppermost level of the mast), 57 m, 44 m, 31 m, and 18 m; then, AirAbs is measured at 70 m and 18 m; and lastly, Sdir is measured at 70 m, 44 m, and 18 m.
 
-All measurements, i.e. the three categories at their respective mast heights, are simultaneously recorded with 10-minutes resolution. 
+All three categories at their respective mast heights get 3000 readings every 10 minutes, i.e. the have a sampling rate of 5 Hz.
+
+Lastly, the recordings at different heights also indicate the tool used to make the measurements since we know where in the mast of turbine V52 the tools are. As such, for wind speed (Wsp), the cup anemometer and the sonic anemometer are used, for temperature (AirAbs), the thermometer is used, and for wind direction (Sdir) only the sonic anemometer is used since the cup anemometer, which is also installed and the pertinent mast heights, cannot track wind direction.
+
 
 \subsection{Raw Time Series Plot}
-\textbf{Task:} Plot the raw time series of the wind speed at the different heights. What time scales do you see? Do they differ for the different heights?
+\textbf{Task 3:} Plot the raw time series of the wind speed at the different heights. What time scales do you see? Do they differ for the different heights?
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.8\textwidth]{figures/Q3_plot.png}
+    \includegraphics[width=0.8\textwidth]{figures/Q3_plot.png}
     \caption{Raw wind speed time series at various heights (10th Feb 2026).}
 \end{figure}
 
+The plots in Figure \textcolor{red}{cite the relevant figure} show the wind speeds recorded at different heights, i.e. rungs, of the measurement mast of turbine V52. Across all five of them, one can observe irregularities in the behavior, which correspond to turbulences in the flow of the wind. These are described in two scales––time-wise and spatial––, which in the plots correspond to the duration of the inflections in the curve and to the shape of the curve, respectively.
+
+With this in mind, turbulences seem to occur in a shorter and in a longer time span at all five heights, while keeping a similar overall shape. The first relates to time scales, so changes in wind speed happen in the seconds-long scale, which correspond to local and small disturbances that look almost like noise, and so do they happen in the minutes-long scale, which correspond to overall pattern changes that lead to evident dips and raises in the plots. 
+
+The former scale then lead to the spatial scale, which determines what type of duration the turbulence will have. Sudden changes (seconds-long), like a sudden draft, will usually be physically contained an occur at a specific height, which allows us to have five different plots. However, progressive changes (minutes-long), like the transition from day to night, will usually span several heights and affect a range of air parcels, which results in still similar 5 plots. 
+This is particularly evident in the 2400-3300 seconds range in Figure \textcolor{red}{cite the relevant figure}, which shows a w-shape in the five heights where an important drop is followed by a slight increase, a drop and an important increase in wind speed.
+
+Lastly, height and average wind speed appear to be directly proportional, such that lower heights experience lower mean wind speeds while the opposite is true for higher heights. 
+
 \subsection{Logarithmic Wind Profile}
-\textbf{Task:} Plot the average wind speed for each height against height $z$. Can the profile be described by a logarithmic wind profile?
+\textbf{Task 4:} Plot the average wind speed for each height against height $z$. Can the profile be described by a logarithmic wind profile?
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Q4_plot.png}
+    \caption{Average wind speeds at various heights and fitted logarithmic profile (10th Feb 2026).}
+\end{figure}
+
+In Q1 we observed that "the prevailing winds in the area come from the west, over the fjord...which leads to very low terrain roughness", yet we must recall that there existed a stretch of open land, recently snowed on, between the fjord and the measurement mast. According to the literature (page 14, slides of "Wind Profiles" Lecture), the roughness length of farmland with open appearance, snow surfaces, and fjords are $0.05$, $10^{-3}$, and $10^{-4}$, respectively. 
+
+The fitted curve however, used $z_0 = 0.9766$, which more closely resembles the roughness of a city. This may be the case because during the day of the visit we had eastern winds, which corresponds to an influx from nearby populated areas like Ågerup or further and denser areas like Copenhagen.
 
 \subsection{Roughness Length and Friction Velocity}
-\textbf{Task:} Estimate the roughness length $z_0$ and the friction velocity $u_*$ from the observed wind profile.
+\textbf{Task 5:} Estimate the roughness length $z_0$ and the friction velocity $u_*$ from the observed wind profile.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Q5_plot.png}
+    \caption{Turbulence intensity at various heights (10th Feb 2026)}
+\end{figure}
+
+Turbulence intensity is the ratio of the standard deviation and mean value of the wind speed. It is thus dimensionless, and it helps to quantify how "erratic" turbulences are. 
+
+Figure $\textcolor{red}{figure number}$ shows a general indirect proportionality between height and turbulence: the greater the height at which the measurement was taken, the lower the turbulence intensity. There is, however, a slight deviation from this pattern at turbulence intensity measured at 31 m since it is higher than the turbulence intensity measured at 18 m. 
+
+The overall pattern is likely dictated by the disminution of obstacles and the homogeneity of temperature at greater heights. Immediately around turbine V52 there is no large objects, e.g. skyscrappers, dense forests, etc., so there is fewer occassions for disrupting wind flow. Then, the ground, which absorbs and later emits the most heat in the course of a day and supports objects (machinery, buildings, etc.) with their individual heat absorption and radiation, introduces a heat gradient that alters more the temperature of the wind at lower heights. 
+
+The former will be generally true and the single observable deviation in the decrease of turbulence intensity with speed at 31 m may come from an overlap with other large objects, greater wind drafts at that height, or ...
 
 \subsection{Stability Impact}
-\textbf{Task:} Estimate the lapse rate by using the data from the two temperature sensors at 18m and 70m.
+\textbf{Task 6:} Estimate the lapse rate by using the data from the two temperature sensors at 18m and 70m.
 Compare its value with the dry adiabatic lapse rate and give a comment. Discuss the validity of the logarithmic profile under the observed stability conditions. 
 
 
@@ -69,10 +105,10 @@ The logarithmic wind profile is valid only for neutral conditions, where buoyanc
 
 
 \subsection{Heat Flux and Stability}
-\textbf{Task:} Estimate the friction velocity and the heat flux from the sonic anemometer data.
+\textbf{Task 7:} Estimate the friction velocity and the heat flux from the sonic anemometer data.
 
 \subsection{Weather Conditions}
-\textbf{Task:} How was the weather at the day of visit? Does the observed weather support your finding of question 7?
+\textbf{Task 8:} How was the weather at the day of visit? Does the observed weather support your finding of question 7?
 
 
 The day we visited Risø was windy from the eastern direction with some snowflakes. Generally, the site experiences western winds from the fjord, but that was not the case that day.
