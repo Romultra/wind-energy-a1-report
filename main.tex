@@ -51,10 +51,10 @@
 \usepackage{tabularx}
 \usepackage{subcaption}
 
-
 % --- set footer and header ---
 \pagestyle{fancy}
 \fancyhf{}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
 
 \setlength{\parindent}{2em}
 \title{Analysis of measured wind data} % to reference as \title, dont use \maketitle
@@ -119,9 +119,7 @@ numbersep=0.5cm
 %\thispagestyle{fancy}
 
 \newpage
-\pagenumbering{arabic} 
-\fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
-\setlength{\parindent}{0pt}
+\pagenumbering{arabic}
 
 \input{part_1}
 \input{part_2}
@@ -134,7 +132,7 @@ numbersep=0.5cm
 \newpage
 \appendix
 
-\input{appendix}
+%\input{appendix}
 \label{ch6}
 
 

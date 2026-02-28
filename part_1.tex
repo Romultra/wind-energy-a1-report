@@ -1,5 +1,6 @@
 \section{Part 1: Vertical variation of wind speed}
 \label{sec:part1}
+\setlength{\parindent}{0pt}
 
 \subsection{Met Mast and Location}
 \textbf{Task:} Describe the met mast and its location. How do the surroundings of the mast look in terms of terrain roughness? How far is the mast from the turbine and in which direction? Why?
@@ -13,7 +14,7 @@ Therefore free flow measurements can be obtained.
 \subsection{Data Collection}
 \textbf{Task:} Describe the data collected. What has been measured, what units, what sample rate, where at the mast and with what instruments?
 
-The data collected on February 10th, 2026, corresponds to three categories: \textbf{Wsp, AirAbs, Sdir}. They correspond to horizontal wind speeds measured with cup anemometers and wind vanes in $m/s^2$, to temperature measured with \textcolor{red}{how is it measured?} in $\º$C, and southern wind direction in $\º$. 
+The data collected on February 10th, 2026, corresponds to three categories: \textbf{Wsp, AirAbs, Sdir}. They correspond to horizontal wind speeds measured with cup anemometers and wind vanes in $m/s^2$, to temperature measured with \textcolor{red}{how is it measured?} in $^\circ$ C, and southern wind direction in $^\circ$. 
 
 Since the wind is a dynamic fluid, each category varies according to height prompting them to be measured at different rungs of the mast. Wsp is measured at 70 m (i.e. the uppermost level of the mast), 57 m, 44 m, 31 m, and 18 m; then, AirAbs is measured at 70 m and 18 m; and lastly, Sdir is measured at 70 m, 44 m, and 18 m.
 
@@ -21,12 +22,6 @@ All measurements, i.e. the three categories at their respective mast heights, ar
 
 \subsection{Raw Time Series Plot}
 \textbf{Task:} Plot the raw time series of the wind speed at the different heights. What time scales do you see? Do they differ for the different heights?
-
-\begin{figure}[H]
-    \centering
-    % \includegraphics[width=0.8\textwidth]{figures/Q3_plot.png}
-    \caption{Raw wind speed time series at various heights (10th Feb 2026).}
-\end{figure}
 
 \subsection{Logarithmic Wind Profile}
 \textbf{Task:} Plot the average wind speed for each height against height $z$. Can the profile be described by a logarithmic wind profile?
@@ -36,8 +31,7 @@ All measurements, i.e. the three categories at their respective mast heights, ar
 
 \subsection{Stability Impact}
 \textbf{Task:} Estimate the lapse rate by using the data from the two temperature sensors at 18m and 70m.
-Compare its value with the dry adiabatic lapse rate and give a comment. Discuss the validity of the logarithmic profile under the observed stability conditions. 
-
+Compare its value with the dry adiabatic lapse rate and give a comment.
 
 To estimate the atmospheric lapse rate during the measurement period, we use the
 two temperature sensors mounted on the mast at heights of 18\,m and 70\,m. First the mean temperatures at both hights are computed. The resulting
@@ -64,17 +58,70 @@ For comparison, the dry adiabatic lapse rate is
 \]
 Our measured lapse rate is less negative (the temperature decreases more slowly with height) than the dry adiabatic value of $-9.8\,\mathrm{K/km}$. This indicates weakly stable stratification where vertical motions and turbulent mixing are suppressed compared to neutral conditions. 
 
-The logarithmic wind profile is valid only for neutral conditions, where buoyancy effects are negligible and turbulence is mainly driven by shear. In contrast, our measured lapse rate of $-7.22\,\mathrm{K/km}$ indicates weakly stable conditions where buoyancy suppresses vertical mixing, causing the wind profile to deviate from the ideal logarithmic shape. The logarithmic fit used in Question~4 still works reasonably well over the mast height range, but the fitted roughness length and friction velocity may be biased because stability effects are not explicitly included.
+The logarithmic wind profile is valid only for neutral conditions, where buoyancy effects are negligible and turbulence is mainly driven by shear. In contrast, our measured lapse rate of $-7.22\,\mathrm{K/km}$ indicates weakly stable conditions where buoyancy suppresses vertical mixing. This can cause the wind profile to deviate from the ideal logarithmic shape. This means that the logarithmic fit used in Question~4 still works reasonably well over the mast height range, but the fitted roughness length and friction velocity may be slightly biased because stability effects are not directly included.
+
+
+\subsection{Atmospheric Stability Analysis and Reference Comparison}
+\textbf{Task:} With basis in the reference data, discuss if the conditions at the day of your measurements
+were stable, neutral or unstable. Use also the lapse rates calculated from the reference data
+as guidance.
+
+To classify the atmospheric conditions during the visit on February 10, 2026, the measured data was compared against three standard reference datasets, representing stable, neutral, and unstable atmospheric stratifications.
+
+The wind speed profiles are normalized by the velocity at 44~m ($v/v_{44}$) to allow for a shape-based comparison of the vertical shear regardless of the absolute wind magnitude. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Q7mean.png}
+    \caption{Normalized wind speed profiles $v/v_{44}$ for the visit day compared to DTU reference datasets.}
+    \label{fig:q7_mean}
+\end{figure}
+
+As seen in Figure \ref{fig:q7_mean}, the visit data exhibits a significant velocity gradient, which is similar to the stable one. In comparison, the unstable profile is much flatter due to better vertical mixing.
+Apart from the velocity profile, one can also look at the turbulence intensity (TI) profile to confirm the stability classification.
+Unlike the velocity, the TI values are plotted without normalization to compare the raw turbulence levels across different heights.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Q7TI.png}
+    \caption{Turbulence Intensity (TI) profiles for the visit day compared to the reference datasets.}
+    \label{fig:q7_ti}
+\end{figure}
+
+The turbulence intensity ($TI = \sigma_u / \overline{u}$) was calculated for all heights to characterize the mixing processes during the visit. The results show an overall average TI of 0.2211, with values ranging from $0.1825$ at 70~m to $0.2402$ at 31~m.
+Those values are quite high compared to the reference data. The shape resembles the stable reference and the neutral one most closely, having higher turbulence near the ground and decreasing with height. 
+
+To compare the data from the visit with the reference dataset, one can look once again at the lapse rates.
+In Table \ref{tab:lapse_rates}, the calculated lapse rates for the visit and the reference datasets are summarized. The visit's lapse rate of -7.22~K/km is less negative/more stable than the neutral reference and less stable than the stable refernce, indicating a fairly stable condition between those two references, but closer to the stable one.
+That fits well to the visual comparison of the velocity and turbulence profiles, which also suggest a stable stratification during the visit.
+\begin{table}[H]
+    \centering
+    \caption{Calculated Lapse Rates and Stability Classification.}
+    \label{tab:lapse_rates}
+    \begin{tabular}{lrl}
+        \hline
+        \textbf{Dataset} & \textbf{Lapse Rate [K/km]} \\ \hline
+        Visit (Feb 10)   & -7.22                      \\
+        Neutral Ref      & -11.10                     \\
+        Stable Ref       & 2.22                       \\
+        Unstable Ref     & -13.54                     \\ \hline
+    \end{tabular}
+\end{table}
 
 
 
-\subsection{Heat Flux and Stability}
-\textbf{Task:} Estimate the friction velocity and the heat flux from the sonic anemometer data.
+Since the measured lapse rate is also greater (less negative) than the dry adiabatic rate of -9.8~K/km, one can conclude that the atmosphereric conditions during the visit were stable.
 
 \subsection{Weather Conditions}
 \textbf{Task:} How was the weather at the day of visit? Does the observed weather support your finding of question 7?
 
 
-The day we visited Risø was windy from the eastern direction with some snowflakes. Generally, the site experiences western winds from the fjord, but that was not the case that day.
+The day we visited Risø was windy from the eastern direction with some small snowflakes. Generally, the site experiences western winds from the fjord, but that was not the case that day. The ground was covered with snow and the temperature was a bit under zero degrees Celsius while the sky was full of bright grey clouds. Since the wind came from the land side, it seemed like very cold wind.
+These observations support the outcome from Question 1.7, confirming a stable atmospheric stratification. 
+The presence of snow cover on the ground is a driver for stability, as it increases surface albedo and causes the air to be cooled from below. 
+This prevents the ground from warming the adjacent air layer, thereby suppressing the thermal convection and vertical mixing that would typically characterize an unstable or neutral profile. 
+Furthermore, the fact that the wind came from the east over the snow-covered land rather than the relatively warmer waters of the Roskilde Fjord, ensured that the air mass remained cold and dense near the surface. 
+The lack of surface heating explains why the measured lapse rate of $-7.22$ K/km was less negative than the dry adiabatic rate, as the cold surface environment stop the temperature from decreasing as rapidly with height as it would in a neutral or unstable condition.
 
-\textcolor{red}{does it support finding of Q7?}
+In addition to that, the observed high turbulence intensity (TI $\approx 0.22$) is consistent with this eastern wind direction. 
+The terrain to the East has a higher roughness due to buildings and vegetation. This land-based flow can lead to mechanical turbulence through obstacles and friction, which explains the high TI values despite the thermally stable conditions that would otherwise suppress vertical mixing.
