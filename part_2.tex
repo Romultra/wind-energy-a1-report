@@ -75,6 +75,7 @@ Figures~\ref{fig:q10_wsp70}--\ref{fig:q10_rain} show the cleaned 10-minute mean 
 \end{figure}
 
 \subsubsection{Data Gap Analysis}
+\label{sec:q10_gaps}
 Gaps were identified as any interval between consecutive timestamps exceeding the expected 10-minute resolution. A total of 950 timestamp gaps were found, ranging from 11~minutes to approximately 45~hours. Only 12 gaps exceeded 3~hours.
 
 In addition to timestamp gaps, individual sensor channels exhibit their own periods of missing data. Figure~\ref{fig:q10_gaps} shows the per-channel data availability. The most significant outages are the sonic anemometer at 57~m (17.9\% missing, with a prolonged outage in 2019) and the cup anemometer at 70~m (14.8\% missing, with degraded availability in late 2024--2025). Note that the 57~m sonic outage affects both wind speed (SWsp\_57m) and direction (Sdir\_57m) equally, as both quantities are derived from the same instrument. The remaining channels have 7--8\% missing data.
@@ -103,6 +104,7 @@ Possible reasons for the observed gaps include:
 \end{itemize}
 
 \subsection{Seasonal Wind Roses}
+\label{sec:q11}
 \textbf{Task:} Using the whole time series, plot a wind rose for the winter months (Dec-Feb) and one for the summer months (Jun-Aug) discuss the directional distribution of the wind. Does it match what you would expect for Denmark?
 
 Wind direction was taken from the sonic anemometer at 70~m (\texttt{Sdir\_70m}), and wind speed was computed as the mean of the cup and sonic anemometers at 70~m (\texttt{Wsp\_70m} and \texttt{SWsp\_70m}), using whichever sensor was available when one was missing.
@@ -121,9 +123,36 @@ The main seasonal difference is in wind speed rather than direction. Winter show
 \subsection{Histogram and Weibull Fit}
 \textbf{Task:} Define wind bins with a spacing of 1m/s and plot a histogram of the wind speed variation based on the data from 70m height for two different years, 2018 and 2024. Fit a Weibull distribution to the observed wind speed.
 
+The same combined 70~m wind speed series used in Section~\ref{sec:q11} was used here. Wind speeds were binned in 1~m/s intervals and the frequency of each bin expressed as a percentage of total valid records. A Weibull distribution was then fitted to each year's data by maximum likelihood estimation with the location parameter fixed at zero:
+
 \begin{equation}
     f(u) = \frac{k}{A} \left( \frac{u}{A} \right)^{k-1} \exp\left[ -\left( \frac{u}{A} \right)^k \right]
 \end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Q12_Weibull.png}
+    \caption{Wind speed histograms (1~m/s bins) and Weibull fits at 70~m for 2018 and 2024.}
+    \label{fig:q12_weibull}
+\end{figure}
+
+Figure~\ref{fig:q12_weibull} shows that both years follow a similar distribution, and the Weibull curve fits the observed histogram reasonably well in both cases. The fitted parameters are summarised in Table~\ref{tab:q12_weibull}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lrrr}
+        \toprule
+        Year & Shape $k$ & Scale $A$ [m/s] & Valid records \\
+        \midrule
+        2018 & 2.24 & 7.27 & 48\,834 \\
+        2024 & 2.18 & 7.37 & 43\,746 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Weibull parameters fitted by maximum likelihood for 2018 and 2024 at 70~m.}
+    \label{tab:q12_weibull}
+\end{table}
+
+The shape parameter $k \approx 2.2$ in both years is consistent with typical values reported for Danish coastal sites. The scale parameter $A$ is slightly higher in 2024 (7.37~m/s vs.\ 7.27~m/s), suggesting 2024 was marginally windier on average. The 2024 dataset also contains about 5\,000 fewer valid records than 2018, which is consistent with the cup anemometer outage at 70~m observed in late 2024 (Section~\ref{sec:q10_gaps}).
 
 \subsection{AEP for V52 Turbine}
 \textbf{Task:} Calculate the AEP for the V52 turbine located at the met mast site, based on the 2018 and 2024 wind measured data. Discuss implications on the yearly variability.
