@@ -11,6 +11,12 @@ Regarding the terrain, the location is characterized by varying roughness length
 
 The mast is positioned at this distance and orientation because the prevailing winds in the area come from the west, over the fjord. This setup allows for the measurement of undisturbed wind conditions, as the mast is located upwind of the turbine, ensuring that the data collected is not influenced by the wake effects of the turbine and free flow measurements can be obtained.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/V52_mast.png}
+    \caption{Mast for Meteorological Measurements of V52 Turbine}
+    \label{fig: V52 mast}
+\end{figure}
 
 \subsection{Data Collection}
 \textbf{Task:} Describe the data collected. What has been measured, what units, what sample rate, where at the mast and with what instruments?
@@ -21,7 +27,7 @@ Since wind is a dynamic fluid, and it varies according to its distance from the 
 
 All three categories at their respective mast heights get 3000 readings every 10 minutes, i.e. they have a sampling rate of 5 Hz.
 
-Lastly, the recordings at different heights also indicate the tool used to make the measurements since we know where in the mast of turbine V52 the tools are from Figure \ref{}. As such, for wind speed (Wsp), the cup anemometer and the sonic anemometer are used, for temperature (AirAbs), the thermometer is used, and for wind direction (Sdir) only the sonic anemometer is used since the cup anemometer, which is also installed and the pertinent mast heights, cannot track wind direction.
+Lastly, the recordings at different heights also indicate the tool used to make the measurements since we know where in the mast of turbine V52 the tools are from Figure \ref{fig: V52 mast}. As such, for wind speed (Wsp), the cup anemometer and the sonic anemometer are used, for temperature (AirAbs), the thermometer is used, and for wind direction (Sdir) only the sonic anemometer is used since the cup anemometer, which is also installed at the mast heights where Sdir was measured, cannot track wind direction.
 
 
 \subsection{Raw Time Series Plot}
@@ -31,16 +37,17 @@ Lastly, the recordings at different heights also indicate the tool used to make 
     \centering
     \includegraphics[width=0.8\textwidth]{figures/Q3.png}
     \caption{Raw wind speed time series at various heights (10th Feb 2026).}
+    \label{fig: raw wind speeds of visit data}
 \end{figure}
 
-The plots in Figure \textcolor{red}{cite the relevant figure} show the wind speeds recorded at different heights, i.e. rungs, of the measurement mast of turbine V52. Across all five of them, one can observe irregularities in the behavior, which correspond to turbulences in the flow of the wind. These are described in two scales––time-wise and spatial––, which in the plots correspond to the duration of the inflections in the curve and to the shape of the curve, respectively.
+The plots in Figure \ref{fig: raw wind speeds of visit data} show the wind speeds recorded at different heights, i.e. rungs, of the measurement mast of turbine V52. Across all five of them one can observe irregularities in the behavior, which correspond to turbulences in the flow of the wind. These are described in two scales––a time and a spatial scale––, which in the plots correspond to the duration of the inflections in the curves and to the shape of the curves, respectively.
 
-With this in mind, turbulences seem to occur in a shorter and in a longer time span at all five heights, while keeping a similar overall shape. The first relates to time scales, so changes in wind speed happen in the seconds-long scale, which correspond to local and small disturbances that look almost like noise, and so do they happen in the minutes-long scale, which correspond to overall pattern changes that lead to evident dips and raises in the plots. 
+With this in mind, turbulences seem to occur in a shorter and in a longer time span at all five heights, while keeping a similar overall shape. The duration of the turbulences relates to the time scale: changes in wind speed happen in the seconds-long scale, which  correspond to local and small disturbances that look almost like noise, and so do they happen in the minutes-long scale, which correspond to overall pattern changes that lead to evident dips and raises in the plots. 
 
-The former scale then lead to the spatial scale, which determines what type of duration the turbulence will have. Sudden changes (seconds-long), like a sudden draft, will usually be physically contained an occur at a specific height, which allows us to have five different plots. However, progressive changes (minutes-long), like the transition from day to night, will usually span several heights and affect a range of air parcels, which results in still similar 5 plots. 
-This is particularly evident in the 2400-3300 seconds range in Figure \textcolor{red}{cite the relevant figure}, which shows a w-shape in the five heights where an important drop is followed by a slight increase, a drop and an important increase in wind speed.
+This then leads to the spatial scale, which determines what type of duration the turbulence will have. Sudden changes (seconds-long), like a sudden draft, will usually be physically contained and occur at a specific height, such that five plots are needed to show the recordings of each rung of the mast. On the other hand, progressive changes (minutes-long), like the transition from day to night, will usually span several heights and affect a range of air parcels, which results in a similar shape across the 5 plots. 
+This is particularly evident in the 2400-3300 seconds range in Figure \ref{fig: raw wind speeds of visit data}, which shows a w-shape in the five heights where a significant drop is followed by a slight increase, another drop, and a final significant increase in wind speed.
 
-Lastly, height and average wind speed appear to be directly proportional, such that lower heights experience lower mean wind speeds while the opposite is true for higher heights. 
+Lastly, height and average wind speed appear to be directly proportional, such that lower heights experience lower mean wind speeds while the opposite is true for greater heights. 
 
 \subsection{Logarithmic Wind Profile}
 \textbf{Task 4:} Plot the average wind speed for each height against height $z$. Can the profile be described by a logarithmic wind profile?
