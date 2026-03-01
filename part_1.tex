@@ -7,7 +7,7 @@
 
 The measurements are from DTU Risø Campus using a met mast with a total height of 70 m. The mast is around 120 m away from the Vestas V52 wind turbine towards the west.
 
-Regarding the terrain, the location is characterized by varying roughness lengths. To the west, it is dominated by the Roskilde Fjord, which leads to very low terrain roughness (roughness ~0). In the other directions, the roughness is higher due to a mix of open fields with light vegetation (roughness ~1-2) and the campus buildings (roughness ~2-3).
+Regarding the terrain, the location is characterized by varying roughness lengths. To the west, it is dominated by the Roskilde Fjord, which leads to very low terrain roughness (roughness ~0). Towards the south and north, the roughness is higher due to a mix of open fields with light vegetation (roughness ~1-2) and the campus buildings (roughness ~2-3). And, towards the east, roughness remains high (roughness ~2-3) by having a dense forest and small towns like Ågerup.
 
 The mast is positioned at this distance and orientation because the prevailing winds in the area come from the west, over the fjord. This setup allows for the measurement of undisturbed wind conditions, as the mast is located upwind of the turbine, ensuring that the data collected is not influenced by the wake effects of the turbine and free flow measurements can be obtained.
 
@@ -30,7 +30,7 @@ All three categories at their respective mast heights get 3000 readings every 10
 Lastly, the recordings at different heights also indicate the tool used to make the measurements since we know where in the mast of turbine V52 the tools are from Figure \ref{fig: V52 mast}. As such, for wind speed (Wsp), the cup anemometer and the sonic anemometer are used, for temperature (AirAbs), the thermometer is used, and for wind direction (Sdir) only the sonic anemometer is used since the cup anemometer, which is also installed at the mast heights where Sdir was measured, cannot track wind direction.
 
 
-\subsection{Raw Time Series Plot}
+\subsection{Raw Time Series Plot} \label{sec 1.1}
 \textbf{Task:} Plot the raw time series of the wind speed at the different heights. What time scales do you see? Do they differ for the different heights?
 
 \begin{figure}[H]
@@ -63,10 +63,11 @@ Figure \ref{fig: avg wind speeds at diff heights with log fit} shows a scatterpl
 
 $$U(z) = \frac{u_0}{\kappa} ln(\frac{z}{z_0}) \label{eq: logarithmic wind profile eqn}$$
 
-The visit data provided us with the information to compute the mean wind speeds at each height, with wind speeds (U) every 10 minutes, and with the relevant height (z). \kappa is the Von Karman constant (\kappa = 0.4), yet we were still missing the roughness length (z_0) and friction velocity (u^*). As such, our Python optimizer returned values for both of the missing parameters after fitting the logarithmic expression to the mean wind speeds. They were $z_0 = $ and $u^* = $
-Q1 we observed that "the prevailing winds in the area come from the west, over the fjord...which leads to very low terrain roughness", yet we must recall that there existed a stretch of open land, recently snowed on, between the fjord and the measurement mast. According to the literature (page 14, slides of "Wind Profiles" Lecture), the roughness length of farmland with open appearance, snow surfaces, and fjords are $0.05$, $10^{-3}$, and $10^{-4}$, respectively. 
+The visit data provided us with the information to compute the mean wind speeds at each height, with wind speeds (U) every 10 minutes, and with the relevant height (z). $\kappa$ is the Von Karman constant ($\kappa = 0.4$), yet we were still missing the roughness length ($z_0$) and friction velocity ($u^*$). As such, our Python optimizer returned values for both of the missing parameters after fitting the logarithmic expression to the mean wind speeds. They were $u^* = 0.6174 m/s$ and  $z_0 = 0.9766 m$.
 
-The fitted curve however, showed $z_0$ to be $z_0 = 0.9766$, which more closely resembles the roughness of a city. This may be the case because during the day of the visit we had eastern winds, which corresponds to an influx from nearby populated areas like Ågerup or further and denser areas like Copenhagen.
+The friction velocity seems reasonable, but the roughness length may be too high for the area surrounding the meteorological mast. In \ref{sec 1.1} we recognized the variety of roughness lengths, but the only direction with a roughness length closest to $1.00 m$ was to the east. This then makes sense considering that on the day of the visit that was from whence the wind was blowing.  
+
+As such, we can say that the profile can indeed be described by the logarithmic expression for wind profiles even if visually, it more closely resembles a linear fit. 
 
 \subsection{Roughness Length and Friction Velocity}
 \textbf{Task 5:} Estimate the roughness length $z_0$ and the friction velocity $u_*$ from the observed wind profile.
@@ -77,7 +78,9 @@ The fitted curve however, showed $z_0$ to be $z_0 = 0.9766$, which more closely 
     \caption{Turbulence intensity at various heights (10th Feb 2026)}
 \end{figure}
 
-Turbulence intensity is the ratio of the standard deviation and mean value of the wind speed. It is thus dimensionless, and it helps to quantify how "erratic" turbulences are. 
+Turbulence intensity is the ratio of the standard deviation and mean value of the wind speed. It is thus dimensionless, and it helps to quantify how "erratic" turbulences are:
+
+$$ TI = $$
 
 Figure $\textcolor{red}{figure number}$ shows a general indirect proportionality between height and turbulence: the greater the height at which the measurement was taken, the lower the turbulence intensity. There is, however, a slight deviation from this pattern at turbulence intensity measured at 31 m since it is higher than the turbulence intensity measured at 18 m. 
 
