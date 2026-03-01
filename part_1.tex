@@ -13,7 +13,7 @@ The mast is positioned at this distance and orientation because the prevailing w
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/V52_mast.png}
+    \includegraphics[width=0.8\textwidth]{figures/V52_mast.png}
     \caption{Mast for Meteorological Measurements of V52 Turbine}
     \label{fig: V52 mast}
 \end{figure}
@@ -76,17 +76,18 @@ As such, we can say that the profile can indeed be described by the logarithmic 
     \centering
     \includegraphics[width=0.8\textwidth]{figures/Q5.png}
     \caption{Turbulence intensity at various heights (10th Feb 2026)}
+    \label{fig: TI vs height}
 \end{figure}
 
-Turbulence intensity is the ratio of the standard deviation and mean value of the wind speed. It is thus dimensionless, and it helps to quantify how "erratic" turbulences are:
+Turbulence intensity (TI) is the ratio of the standard deviation and mean value of the wind speed. It is thus dimensionless, and it helps to quantify how "erratic" turbulences are:
 
-$$ TI = $$
+$$ TI = \frac{\sigma_V}{V_{10 min}}$$
 
-Figure $\textcolor{red}{figure number}$ shows a general indirect proportionality between height and turbulence: the greater the height at which the measurement was taken, the lower the turbulence intensity. There is, however, a slight deviation from this pattern at turbulence intensity measured at 31 m since it is higher than the turbulence intensity measured at 18 m. 
+Figure $\ref{fig: TI vs height}$ shows a general indirect proportionality between height and turbulence: the greater the height at which the measurement was taken, the lower the turbulence intensity. There is, however, a slight deviation from this pattern when turbulence intensity is measured at 31 m since it is higher than the one measured at 18 m. 
 
-The overall pattern is likely dictated by the disminution of obstacles and the homogeneity of temperature at greater heights. Immediately around turbine V52 there is no large objects, e.g. skyscrappers, dense forests, etc., so there is fewer occassions for disrupting wind flow. Then, the ground, which absorbs and later emits the most heat in the course of a day and supports objects (machinery, buildings, etc.) with their individual heat absorption and radiation, introduces a heat gradient that alters more the temperature of the wind at lower heights. 
+The overall pattern is likely dictated by the disminution of obstacles and the homogeneity of temperature at greater heights. Immediately around turbine V52 there is only a denser forest towards the east, so there is few obstacles that may disrupt wind flow. Similarly, the ground, which absorbs and later emits the most heat in the course of a day and supports objects (machinery, buildings, etc.) with individual heat absorptions and radiations, introduces a heat gradient that mainly affects the lower wind parcels. 
 
-The former will be generally true and the single observable deviation in the decrease of turbulence intensity with speed at 31 m may come from an overlap with other large objects, greater wind drafts at that height, or ...
+Lastly, the single observable deviation from the aforementioned pattern––TI at 31 m, may come from the overlap of the bottom half of the rotor with other large objects, greater wind drafts at that height, or an unexpected temperature difference.
 
 \subsection{Stability Impact}
 \textbf{Task:} Estimate the lapse rate by using the data from the two temperature sensors at 18m and 70m.
