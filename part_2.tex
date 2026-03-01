@@ -4,7 +4,7 @@
 \subsection{Data Description}
 \textbf{Task:} Describe the data. What has been measured, in what units, at which locations, with which instruments and with what temporal resolution?
 
-The dataset consists of seven years of wind observations from 2018 to the end of 2025, provided as 10-minute mean values. 
+The dataset consists of eight years of wind observations from 2018 to 2026, provided as 10-minute mean values. 
 The data in the file \texttt{tenMinutesData\_2018\_2024.csv} originates from the meteorological mast at the DTU Risø Campus.
 
 \begin{table}[H]
@@ -21,82 +21,85 @@ The data in the file \texttt{tenMinutesData\_2018\_2024.csv} originates from the
     \caption{Summary of measured parameters and sensor types.}
 \end{table}
 
-Measurements are available from different heights. From the 57m and 70m hight, SWsp, Wsp and Sdir are available. In addition to that the wind direction for 41m (Wdir) and data for the Rain are in the included in the data file.
+The measurements are available at specific heights, including 57 m and 70 m for wind speed, and 41 m for wind direction. For the long-term climate analysis and the Annual Energy Production (AEP) calculation of the V52 turbine, the data collected at the 70 m height is of primary interest.
 
 \subsection{Raw Data and Gaps}
 \textbf{Task:} Plot the raw data as function of time. Identify any data gaps and discuss possible reasons for these gaps.
 
-\subsubsection{Time Series Visualization}
-The raw 10-minute average data for wind speed, direction, and precipitation is plotted for the period from 2018 to the end of 2025. This includes measurements from cup anemometers, sonic anemometers, and wind vanes at various heights.
+\subsubsection{Data Cleaning}
+Before plotting, outliers were removed from the dataset. All wind speed measurements exceeding 37~m/s or below 0 were replaced with NaN, as these are physically unreasonable for Denmark, removing 888 values across all wind speed channels. Additionally, any sensor channel reporting the exact same value for six or more consecutive 10-minute records was flagged as a stuck sensor and replaced with NaN. In total, 128,067 values were removed across all channels, the majority from stuck direction sensors.
+
+\subsubsection{Time Series}
+Figures~\ref{fig:q10_wsp70}--\ref{fig:q10_rain} show the cleaned 10-minute mean time series for wind speed, direction, and precipitation over the full 2018--2025 period. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figures/Q10_Wsp_70m.png}
-    \caption{Raw 10-minute wind speed at 70m from the Cup and Sonic anemometers.}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/Q10_Wsp_57m.png}
-    \caption{Raw 10-minute wind speed at 57m from the Cup and Sonic anemometers.}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/Q10_Dir_70m.png}
-    \caption{Wind direction time series from the Sonic anemometer at 70m height.}
+    \includegraphics[width=\textwidth]{figures/Q10_Wsp_70m.png}
+    \caption{10-minute mean wind speed at 70~m from cup (top) and sonic (bottom) anemometers.}
+    \label{fig:q10_wsp70}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figures/Q10_Dir_57m.png}
-    \caption{Wind direction time series from the Sonic anemometer at 57m height.}
+    \includegraphics[width=\textwidth]{figures/Q10_Wsp_57m.png}
+    \caption{10-minute mean wind speed at 57~m from cup (top) and sonic (bottom) anemometers.}
+    \label{fig:q10_wsp57}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figures/Q10_Dir_41m.png}
-    \caption{Wind direction time series from the wind vane at 41m height.}
+    \includegraphics[width=\textwidth]{figures/Q10_Dir_70m.png}
+    \caption{Wind direction from the sonic anemometer at 70~m.}
+    \label{fig:q10_dir70}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figures/Q10_Rain.png}
-    \caption{Time series of 10-minute precipitation (Rain) levels across the measurement period.}
+    \includegraphics[width=\textwidth]{figures/Q10_Dir_57m.png}
+    \caption{Wind direction from the sonic anemometer at 57~m.}
+    \label{fig:q10_dir57}
 \end{figure}
-
-\subsubsection{Data Gap Analysis and Discussion}
-To further investigate and assess the data quality, time intervals over the expected 10-minute resolution are identified as gaps. The following figures show the temporal distribution and duration of the missing records.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figures/Q10_Global_Gaps.png}
-    \caption{Global data availability from 2018 to 2026. Red segments identify total system outages where no timestamps were recorded.}
-\end{figure}
-The data gaps are predominantly in the years between 2018 and 2020. 
-From earlier plots one can see that there is missing data of the wind speed at 70m hight in the first half of 2025 from the cup sensor.
-In addition to that, the cup snesor at 57 m also has a data gap between 2019 and 2020.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/Q10_Gap_Histogram.png}
-    \caption{Distribution of gap durations on a logarithmic scale, showing the frequency of short versus long-term outages.}
-\end{figure}
-The short outtakes are dominating while longer outtages occur a lot less frequent. The longest outtage was around 45 hours.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/Q10_Long_Gap_Seasonality.png}
-    \caption{Seasonality of long-term gaps (> 3 hours), highlighting potential periods of sensor icing.}
+    \includegraphics[width=\textwidth]{figures/Q10_Dir_41m.png}
+    \caption{Wind direction from the wind vane at 41~m.}
+    \label{fig:q10_dir41}
 \end{figure}
 
-\textbf{Discussion of Gaps:}
-Possible reasons for the data gaps are:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Q10_Rain.png}
+    \caption{10-minute precipitation over the measurement period.}
+    \label{fig:q10_rain}
+\end{figure}
+
+\subsubsection{Data Gap Analysis}
+Gaps were identified as any interval between consecutive timestamps exceeding the expected 10-minute resolution. A total of 950 timestamp gaps were found, ranging from 11~minutes to approximately 45~hours. Only 12 gaps exceeded 3~hours.
+
+In addition to timestamp gaps, individual sensor channels exhibit their own periods of missing data. Figure~\ref{fig:q10_gaps} shows the per-channel data availability. The most significant outages are the sonic anemometer at 57~m (17.9\% missing, with a prolonged outage in 2019) and the cup anemometer at 70~m (14.8\% missing, with degraded availability in late 2024--2025). Note that the 57~m sonic outage affects both wind speed (SWsp\_57m) and direction (Sdir\_57m) equally, as both quantities are derived from the same instrument. The remaining channels have 7--8\% missing data.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Q10_Global_Gaps.png}
+    \caption{Data availability per sensor channel. Red segments indicate missing data periods longer than 1~hour.}
+    \label{fig:q10_gaps}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Q10_Gap_Histogram.png}
+    \caption{Distribution of timestamp gap durations on a log-log scale.}
+    \label{fig:q10_hist}
+\end{figure}
+
+The gap duration histogram (Figure~\ref{fig:q10_hist}) reveals two distinct regimes. The vast majority of gaps are short (10--30~minutes), consistent with transient telemetry errors or brief signal loss during wireless data transmission. A smaller population of gaps spans hours to days, pointing to more sustained causes.
+
+Possible reasons for the observed gaps include:
 \begin{itemize}
-    \item \textbf{Sensor Icing:} Seasonal analysis shows long-term gaps ($>3$ hours) mainly from January to April. This indicates icing of cup anemometers and ultrasonic paths, which occurs even while the data logger remains powered.
-    \item \textbf{Telemetry Errors:} The high frequency of short-duration gaps (10--20 minutes) in the histogram suggests transient signal loss during wireless data transmission from the mast to the server.
-    \item \textbf{Local Hardware Defects:} Discrepancies between sensors at different heights (e.g., the 57m direction outage in 2019-2020) point to localized cable damage or specific instrument failure rather than a global system crash.
-    \item \textbf{Scheduled Maintenance:} Simultaneous gaps across all sensor channels during summer months are typical for planned annual inspections, sensor calibrations, or manual data retrieval.
-    \item \textbf{Atmospheric Interference:} Increased short-term gaps during summer afternoons correlate with lightning activity and electromagnetic interference from storms, potentially triggering automated system reboots.
-    \item \textbf{Biological Factors:} Transient blockages of sonic anemometer paths or mechanical interference with cup anemometers by birds can lead to rejected 10-minute averages.
-    \item \textbf{Power Supply:} System-wide outages (red bars in the availability plot) may result from battery voltage drops in the solar-powered system during periods of low solar radiation.
+    \item \textbf{Telemetry errors:} The high frequency of short gaps (10--20~min) suggests intermittent signal loss in the wireless data link between the mast and the logging server.
+    \item \textbf{Instrument failure:} The extended sonic outage at 57~m in 2019 and the cup anemometer degradation at 70~m in late 2024--2025 indicate localized hardware failures specific to individual sensors.
+    \item \textbf{Scheduled maintenance:} Simultaneous gaps across multiple channels are consistent with planned inspections and sensor recalibration.
 \end{itemize}
 
 \subsection{Seasonal Wind Roses}
