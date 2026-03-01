@@ -105,7 +105,18 @@ Possible reasons for the observed gaps include:
 \subsection{Seasonal Wind Roses}
 \textbf{Task:} Using the whole time series, plot a wind rose for the winter months (Dec-Feb) and one for the summer months (Jun-Aug) discuss the directional distribution of the wind. Does it match what you would expect for Denmark?
 
+Wind direction was taken from the sonic anemometer at 70~m (\texttt{Sdir\_70m}), and wind speed was computed as the mean of the cup and sonic anemometers at 70~m (\texttt{Wsp\_70m} and \texttt{SWsp\_70m}), using whichever sensor was available when one was missing.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Q11_WindRoses.png}
+    \caption{Seasonal wind roses at 70~m for winter (Dec--Feb) and summer (Jun--Aug), 2018--2025. Colours indicate wind speed bins; radial axis shows frequency of occurrence (\%).}
+    \label{fig:q11_roses}
+\end{figure}
+
+Figure~\ref{fig:q11_roses} shows that winds from the west and south-west dominate in both seasons, with this sector accounting for roughly 35--40\% of all observations. A secondary, weaker peak is visible from the south east, which likely corresponds to periods of easterly flow from the Swedish mainland and baltic sea. The directional pattern is broadly consistent with what one would expect for a site in Denmark: the country is exposed to the prevailing westerlies coming off the North Sea and the Atlantic, so westerly and south-westerly winds are the most frequent throughout the year.
+
+The main seasonal difference is in wind speed rather than direction. Winter shows a larger proportion of higher-speed events (12--15~m/s), reflected by the longer dark-coloured bars in the west to south-west sector. Summer winds are similarly directed but weaker on average. This agrees with the general expectation that storms and strong winds are more common in winter, while summer conditions tend to be calmer.
 
 \subsection{Histogram and Weibull Fit}
 \textbf{Task:} Define wind bins with a spacing of 1m/s and plot a histogram of the wind speed variation based on the data from 70m height for two different years, 2018 and 2024. Fit a Weibull distribution to the observed wind speed.
