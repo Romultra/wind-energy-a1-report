@@ -56,11 +56,17 @@ Lastly, height and average wind speed appear to be directly proportional, such t
     \centering
     \includegraphics[width=0.8\textwidth]{figures/Q4.png}
     \caption{Average wind speeds at various heights and fitted logarithmic profile (10th Feb 2026).}
+    \label{fig: avg wind speeds at diff heights with log fit}
 \end{figure}
 
-In Q1 we observed that "the prevailing winds in the area come from the west, over the fjord...which leads to very low terrain roughness", yet we must recall that there existed a stretch of open land, recently snowed on, between the fjord and the measurement mast. According to the literature (page 14, slides of "Wind Profiles" Lecture), the roughness length of farmland with open appearance, snow surfaces, and fjords are $0.05$, $10^{-3}$, and $10^{-4}$, respectively. 
+Figure \ref{fig: avg wind speeds at diff heights with log fit} shows a scatterplot of the mean or average wind speeds at the different measurement heights along with a logarithmic fit that comes from the equation for wind profiles
 
-The fitted curve however, used $z_0 = 0.9766$, which more closely resembles the roughness of a city. This may be the case because during the day of the visit we had eastern winds, which corresponds to an influx from nearby populated areas like Ågerup or further and denser areas like Copenhagen.
+$$U(z) = \frac{u_0}{\kappa} ln(\frac{z}{z_0}) \label{eq: logarithmic wind profile eqn}$$
+
+The visit data provided us with the information to compute the mean wind speeds at each height, with wind speeds (U) every 10 minutes, and with the relevant height (z). \kappa is the Von Karman constant (\kappa = 0.4), yet we were still missing the roughness length (z_0) and friction velocity (u^*). As such, our Python optimizer returned values for both of the missing parameters after fitting the logarithmic expression to the mean wind speeds. They were $z_0 = $ and $u^* = $
+Q1 we observed that "the prevailing winds in the area come from the west, over the fjord...which leads to very low terrain roughness", yet we must recall that there existed a stretch of open land, recently snowed on, between the fjord and the measurement mast. According to the literature (page 14, slides of "Wind Profiles" Lecture), the roughness length of farmland with open appearance, snow surfaces, and fjords are $0.05$, $10^{-3}$, and $10^{-4}$, respectively. 
+
+The fitted curve however, showed $z_0$ to be $z_0 = 0.9766$, which more closely resembles the roughness of a city. This may be the case because during the day of the visit we had eastern winds, which corresponds to an influx from nearby populated areas like Ågerup or further and denser areas like Copenhagen.
 
 \subsection{Roughness Length and Friction Velocity}
 \textbf{Task 5:} Estimate the roughness length $z_0$ and the friction velocity $u_*$ from the observed wind profile.
