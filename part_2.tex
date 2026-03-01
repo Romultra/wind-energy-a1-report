@@ -121,6 +121,7 @@ Figure~\ref{fig:q11_roses} shows that winds from the west and south-west dominat
 The main seasonal difference is in wind speed rather than direction. Winter shows a larger proportion of higher-speed events (12--15~m/s), reflected by the longer dark-coloured bars in the west to south-west sector. Summer winds are similarly directed but weaker on average. This agrees with the general expectation that storms and strong winds are more common in winter, while summer conditions tend to be calmer.
 
 \subsection{Histogram and Weibull Fit}
+\label{sec:q12}
 \textbf{Task:} Define wind bins with a spacing of 1m/s and plot a histogram of the wind speed variation based on the data from 70m height for two different years, 2018 and 2024. Fit a Weibull distribution to the observed wind speed.
 
 The same combined 70~m wind speed series used in Section~\ref{sec:q11} was used here. Wind speeds were binned in 1~m/s intervals and the frequency of each bin expressed as a percentage of total valid records. A Weibull distribution was then fitted to each year's data by maximum likelihood estimation with the location parameter fixed at zero:
@@ -157,15 +158,46 @@ The shape parameter $k \approx 2.2$ in both years is consistent with typical val
 \subsection{AEP for V52 Turbine}
 \textbf{Task:} Calculate the AEP for the V52 turbine located at the met mast site, based on the 2018 and 2024 wind measured data. Discuss implications on the yearly variability.
 
+The power curve of the Vestas V52 (rated power 850~kW, hub height 70~m) was modelled using a cubic relation between cut-in (4~m/s) and rated speed (14~m/s), with constant rated power up to cut-out (25~m/s):
+
+\begin{equation}
+    P(u) = \begin{cases}
+        0 & u < 4~\text{m/s} \\[4pt]
+        P_\text{rated}\,\dfrac{u^3 - u_\text{ci}^3}{u_r^3 - u_\text{ci}^3} & 4 \leq u < 14~\text{m/s} \\[8pt]
+        P_\text{rated} & 14 \leq u \leq 25~\text{m/s} \\[4pt]
+        0 & u > 25~\text{m/s}
+    \end{cases}
+\end{equation}
+
+The AEP was calculated by applying this power curve to the measured wind speed frequency distribution (1~m/s bins) for each year:
+
+\begin{equation}
+    \text{AEP} = \sum_j P(u_j)\, f_j \cdot 8760~\text{h}
+\end{equation}
+
+where $f_j$ is the fraction of time the wind speed falls in bin $j$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Q13_AEP.png}
+    \caption{Measured wind frequency distribution and V52 power curve at 70~m for 2018 and 2024. AEP and capacity factor are shown in the panel titles.}
+    \label{fig:q13_aep}
+\end{figure}
+
 \begin{table}[H]
     \centering
     \begin{tabular}{lrr}
         \toprule
         Year & AEP [MWh] & Capacity Factor [\%] \\
         \midrule
-        2018 & ... & ... \\
-        2024 & ... & ... \\
+        2018 & 1074 & 14.4 \\
+        2024 & 1134 & 15.2 \\
         \bottomrule
     \end{tabular}
-    \caption{Annual Energy Production (AEP) and Capacity Factor for the V52 turbine.}
+    \caption{Annual Energy Production and capacity factor for the V52 turbine, estimated from the measured wind speed distributions at 70~m.}
+    \label{tab:q13_aep}
 \end{table}
+
+The results in Table~\ref{tab:q13_aep} show that 2024 produced about 60~MWh (5.6\%) more energy than 2018, which is consistent with the slightly higher Weibull scale parameter found in Section~\ref{sec:q12} ($A = 7.37$ vs.\ $7.27$~m/s). The capacity factors of 14--15\% are relatively low, which is expected for a site surrounded by buildings and trees at modest hub height; a coastal or offshore location would typically yield values above 30\%.
+
+The difference between the two years illustrates the natural year-to-year variability of the wind resource. A single year of data can therefore over- or underestimate the long-term mean AEP, which is why multi-year averages are normally used for wind energy assessments.
